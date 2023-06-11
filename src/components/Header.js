@@ -1,26 +1,39 @@
 import React from 'react';
 
-function Header() {
-    return (
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/projects">Projects</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            {/* Add more later*/}
-          </ul>
-        </nav>
-        <h1>My Portfolio</h1>
-        {/* Header content here */}
-      </header>
-    );
-  }
+function Header({ activeSection, handleNavigation }) {
+  return (
+    <header>
+      <nav>
+        <ul>
+          <li className={activeSection === 'home' ? 'active' : ''}>
+            <a href="#home" onClick={() => handleNavigation('home')}>
+              Home
+            </a>
+          </li>
+          <li className={activeSection === 'about' ? 'active' : ''}>
+            <a href="#about" onClick={() => handleNavigation('about')}>
+              About
+            </a>
+          </li>
+          <li className={activeSection === 'portfolio' ? 'active' : ''}>
+            <a href="#portfolio" onClick={() => handleNavigation('portfolio')}>
+              Portfolio
+            </a>
+          </li>
+          <li className={activeSection === 'contact' ? 'active' : ''}>
+            <a href="#contact" onClick={() => handleNavigation('contact')}>
+              Contact
+            </a>
+          </li>
+          <li className={activeSection === 'resume' ? 'active' : ''}>
+            <a href="#resume" onClick={() => handleNavigation('resume')}>
+              Resume
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
 
 export default Header;
