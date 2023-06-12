@@ -1,36 +1,45 @@
 import React from 'react';
+import 'tailwindcss/tailwind.css';
 
 function Header({ activeSection, handleNavigation }) {
+  const handleClick = (section) => {
+    if (handleNavigation) {
+      handleNavigation(section);
+    }
+  };
+
   return (
-    <header>
-      <nav>
-        <ul>
-          <li className={activeSection === 'home' ? 'active' : ''}>
-            <a href="#home" onClick={() => handleNavigation('home')}>
-              Home
-            </a>
-          </li>
-          <li className={activeSection === 'about' ? 'active' : ''}>
-            <a href="#about" onClick={() => handleNavigation('about')}>
-              About
-            </a>
-          </li>
-          <li className={activeSection === 'portfolio' ? 'active' : ''}>
-            <a href="#portfolio" onClick={() => handleNavigation('portfolio')}>
-              Portfolio
-            </a>
-          </li>
-          <li className={activeSection === 'contact' ? 'active' : ''}>
-            <a href="#contact" onClick={() => handleNavigation('contact')}>
-              Contact
-            </a>
-          </li>
-          <li className={activeSection === 'resume' ? 'active' : ''}>
-            <a href="#resume" onClick={() => handleNavigation('resume')}>
-              Resume
-            </a>
-          </li>
-        </ul>
+    <header className="bg-green-900">
+      <nav className="flex items-center justify-center h-16">
+        <div className="flex items-center space-x-4">
+          <a
+            className={`text-white ${
+              activeSection === 'about' ? 'underline' : ''
+            }`}
+            href="#about"
+            onClick={() => handleClick('about')}
+          >
+            About
+          </a>
+          <a
+            className={`text-white ${
+              activeSection === 'portfolio' ? 'underline' : ''
+            }`}
+            href="#portfolio"
+            onClick={() => handleClick('portfolio')}
+          >
+            Portfolio
+          </a>
+          <a
+            className={`text-white ${
+              activeSection === 'contact' ? 'underline' : ''
+            }`}
+            href="#contact"
+            onClick={() => handleClick('contact')}
+          >
+            Contact
+          </a>
+        </div>
       </nav>
     </header>
   );

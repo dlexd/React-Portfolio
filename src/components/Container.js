@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import Home from '../pages/Home';
 import AboutMe from '../pages/AboutMe';
 import Contact from '../pages/Contact';
 import Portfolio from '../pages/Portfolio';
 
 function Container() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('about');
 
   const handleNavigation = (section) => {
     setActiveSection(section);
@@ -14,8 +13,6 @@ function Container() {
 
   const renderPage = () => {
     switch (activeSection) {
-      case 'home':
-        return <Home />;
       case 'about':
         return <AboutMe />;
       case 'portfolio':
