@@ -20,6 +20,15 @@ function Portfolio() {
       liveLink: 'https://dlexd.github.io/Work-Day-Scheduler/',
       githubLink: 'https://github.com/dlexd/Work-Day-Scheduler',
     },
+    {
+      id: 3,
+      title: 'Weather Dashboard',
+      description: 'A weather application that allows a user to search for a city and be presented with current and future conditions for that city.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: 'https://camo.githubusercontent.com/77cbfd7abbfd44fa33f718cdebb05d29e443c7bb0abc74f7f19db8734941d00b/68747470733a2f2f692e696d6775722e636f6d2f4e734b6b36346c2e706e67',
+      liveLink: 'https://dlexd.github.io/Weather-Dashboard/',
+      githubLink: 'https://github.com/dlexd/Weather-Dashboard',
+    },
     // Add more projects
   ];
 
